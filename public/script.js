@@ -18,12 +18,12 @@ btn.addEventListener("click", () => {
 
     let index = innerHTML.indexOf(inputValue);
     let string = "/" + inputValue + "/gi";
-    console.log(string);
+
     if (index >= 0){
-        let result = innerHTML.replace(string,
+        let result = innerHTML.replace(/pandemia/gi,
             '<b style="background-color: #ff0; font-size:100%">$&</b>');
 
         inputText.innerHTML = result;
-        //console.log(result);
-    }
+        console.log(result);
+    };
 });

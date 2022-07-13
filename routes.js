@@ -50,7 +50,7 @@ function getAboutTeam() {
 
 router.get('/slides', (req, res) => {
 
-    let file = "C:/Users/samir/OneDrive/Documentos/app-example/meuarquivo.csv";
+    let file = "C:/Users/samir/OneDrive/Documentos/trabalho-am2/meuarquivo.csv";
     let status;
 
     status = readFile(req, res, file);
