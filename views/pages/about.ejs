@@ -1,0 +1,25 @@
+<%- contentFor('body') %>
+    <br>
+    <div class = "jumbotron text-center">
+        <h1>Só tem eu aqui!</h1>
+        <br>
+        <div class = "row">
+            <% for (usuario of usuarios){%>
+                <div class = "col-md-6 offset-md-3">
+                    <h4>
+                        <%= usuario.name %>
+                    </h4>
+                    <br>
+                    <img src = "<%= usuario.avatar %>" width = "50%">
+                    <br>
+                    <br>
+                    <p>
+                        <%= usuario.email%>
+                    </p>
+                </div>
+                <% } %>
+            <div class = "col-md-6 offset-md-3">
+                <p style = "font-weight: bold;">Este software está sob a licença GNU Public License version 3.0.</p>
+            </div>
+        </div>
+    </div>
