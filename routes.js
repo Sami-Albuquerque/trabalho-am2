@@ -6,9 +6,9 @@ const fs = require("fs");
 //const {insertUsers,insertUser,delUser,listUsers,findUser} = require("./model/users");
 let text = [];
 
-function readFile(req, res, file) {
+function readText(req, res, fileName) {
     if (req.url === "/slides") {
-        fs.readFile(file, 'utf8', function (error, contentFile) {
+        fs.readFile(fileName, 'utf8', function (error, contentFile) {
             if (error) {
                 console.log(error);
             } else {
@@ -53,7 +53,7 @@ router.get('/slides', (req, res) => {
     let file = "C:/Users/samir/OneDrive/Documentos/trabalho-am2/meuarquivo.csv";
     let status;
 
-    status = readFile(req, res, file);
+    status = readText(req, res, file);
     if (!status) {
         res.write("Problemas ao acessar o arquivo!");
         res.end();
