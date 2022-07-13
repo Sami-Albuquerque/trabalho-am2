@@ -10,7 +10,6 @@ let text = document.getElementById("search-input");
 
 let inputText = document.getElementById("carouselExampleIndicators");
 let innerHTML = inputText.innerHTML;
-//console.log(innerHTML);
 
 //Usei o recurso de Expressão Regular que é muito bacana para buscas em strings longas. Vale conhecer!
 btn.addEventListener("click", () => {
@@ -20,7 +19,7 @@ btn.addEventListener("click", () => {
     let string = "/" + inputValue + "/gi";
 
     if (index >= 0){
-        let result = innerHTML.replace(/pandemia/gi,
+        let result = innerHTML.replace(RegExp(inputValue + "(?!([^<]+)?<)"),
             '<b style="background-color: #ff0; font-size:100%">$&</b>');
 
         inputText.innerHTML = result;
