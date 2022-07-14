@@ -1,22 +1,33 @@
-# Trabalho de AM2
+# Trabalho final de Autoração Multimídia 2 (AM2)
+
+##Sobre a aplicação
+
 Aplicação feita como trabalho extra da disciplina de Autoração Multimídia 2 do curso de Sistemas e Mídias Digitais.
 
-Seu objetivo é apresentar um pouco da minha aula de campo para o Museu de Arte da UFC (MAUC).
+Seu objetivo é apresentar um pouco da minha aula de campo para o Museu de Arte da UFC (MAUC) por meio de uma apresentação de slides dinâmica feita em EJS.
 
-Para rodá-la, clone este repositório do git na pasta desejada com
+##Para rodá-la
 
-> git clone https://github.com/Sami-Albuquerque/trabalho-am2.git
+Para rodá-la, clone este repositório do git na pasta desejada e entre no repositório com os comandos:
 
-Depois, entre no repositório e rode o comando
+```shell
+git clone https://github.com/Sami-Albuquerque/trabalho-am2.git
+cd trabalho-am2
+```
 
-> npm install --save-dev
+Caso queira rodar em um ambiente de desenvolvimento, rode:
 
-Por fim, para rodar a aplicação, na pasta raiz, rode o comando
+```shell
+npm install
+npm run dev
+```
 
-> node index.js
+Caso queirar rodar em um ambiente de produção, rode:
 
-A aplicação informará o endereço e a porta do servidor
-
-Para acessar, basta acessar o localhost:3000 no seu navegador de preferência
+```shell
+npm install
+npm run build
+npm run start
+```
 
 Obrigada pela atenção e visita!
