@@ -30,7 +30,7 @@ btn.addEventListener("click", () => {
     }
 
     let input = (text.value).toString();
-    
+
     if (input.includes(" ")) {
         alert("Só pode pesquisar uma palavra por vez!");
     }
@@ -56,7 +56,7 @@ function searchWord(word) {
 
     if (index >= 0) {
         let result = HTML.replace(RegExp(word + "(?!([^<]+)?<)"),
-            '<b style="background-color: #ff0; font-size:100%">$&</b>');
+            '<b style="background-color: #8a2be2; font-size:100%">$&</b>');
 
         found = true;
         searchMade = true;
