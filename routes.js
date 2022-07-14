@@ -1,21 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const { getAboutTeam, readText } = require("./utils/utils");
+const {getAboutTeam} = require("./utils/utils");
+const fs = require("fs");
 
-//Importe cada uma das funcoes presentes no arquivo de modulo users.js
-//const {insertUsers,insertUser,delUser,listUsers,findUser} = require("./model/users");
+let text = [];
 
-
-router.use(express.static('public')); //Você usa o USE() para inserir um middleware no Express
+router.use(express.static('public'));
 
 router.get('/', (req, res) => {
-    //REQUEST (REQ) - O que vem do forntend para o backend
-    //RESPONSE (RES) - O que vai do backend para o Forntend
-
     res.render("pages/home");
-
-
-}); // ()={} sendo utilizada como callback
+});
 
 router.get('/about', (req, res) => {
     res.render('pages/about', { usuarios: getAboutTeam() })
@@ -25,9 +19,26 @@ router.get('/slides', (req, res) => {
 
     let file = "C:/Users/samir/OneDrive/Documentos/trabalho-am2/meuarquivo.csv";
 
-    const text = readText(req, res, file);
+    readText(req, res, file);
+    console.log(text);
 
     res.render('pages/slides', { texts: text });
-})
+});
+
+//tentei separar essa função e colocar no utils.js pra ficar separadinho, mas o retorno vinha vazio por motivos que não consegui descobrir, então deixei aqui
+function readText(req, res, fileName) {
+    if (req.url === "/slides") {
+        fs.readFile(fileName, 'utf8', function (error, contentFile) {
+            if (error) {
+                console.log(error);
+            } else {
+                //console.log("foi");
+            }
+            text = contentFile.split("#");
+            res.end();
+            //console.log(texts);
+        });
+    }
+}
 
 module.exports = router;

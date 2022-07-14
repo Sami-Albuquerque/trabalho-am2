@@ -1,6 +1,6 @@
 //const { search } = require("../routes");
 let btn = document.getElementById("search-button");
-let text = document.getElementById("search-input");
+let search = document.getElementById("search-input");
 let found = false;
 let searchMade = false;
 let x;
@@ -29,24 +29,24 @@ btn.addEventListener("click", () => {
         clearTexts();
     }
 
-    let input = (text.value).toString();
+    let input = (search.value).toString();
 
     if (input.includes(" ")) {
         alert("Só pode pesquisar uma palavra por vez!");
     }
     else {
         for (let i = 0; i < 5; i++) {
-            if (!found) {
-                x = "text" + i.toString();
-                console.log(x);
-                doc = document.getElementById(x);
-                HTML = doc.innerHTML;
-                console.log(HTML);
-                searchWord(text.value);
-            }
-            else {
-                console.log("já achei");
-            }
+            //            if (!found) {
+            x = "text" + i.toString();
+            console.log(x);
+            doc = document.getElementById(x);
+            HTML = doc.innerHTML;
+            console.log(HTML);
+            searchWord(search.value);
+            //           }
+            //           else {
+            //                console.log("já achei");
+            //            }
         }
     }
 });
